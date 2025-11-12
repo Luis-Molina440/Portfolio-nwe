@@ -1,0 +1,113 @@
+:root {
+
+    --negro: #000000;
+
+    --plomo-scroll: rgba(47, 46, 46, 0.4);
+
+    --white:rgb(255, 255, 255);
+
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #000000;
+    color: var(--white);
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 80px; 
+}
+
+
+.main {
+    min-width: 300px;
+    width: 100%;
+    }
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--negro); 
+    transition: background-color 0.3s; 
+    backdrop-filter: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navbar.scrolled {
+    background-color: var(--plomo-scroll);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.ubicacion{
+    font-weight: 550;
+}
+
+.img-nav{
+    transform: rotate(-180deg);
+   transition: transform 0.3s;
+}
+
+.img-nav:hover{
+   transform: rotate(180deg);
+   transition: transform 0.3s;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-end; 
+    padding-bottom: 5rem;    
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("./img/fondo-portfolio.png") center 10%/cover no-repeat; 
+    background-color: #000;
+}
+
+.me h1 {
+    font-weight: 900;
+    font-size: clamp(3rem, 18vw, 8rem);
+    
+    line-height: 1.1; 
+    text-shadow: none;
+    margin: 0;
+    box-shadow: none; 
+}
+.me span {
+    color: rgb(222, 94, 145);
+}
+
+.roll {
+    color: #777777;
+    margin-top: 2.5rem; 
+    font-size: 1rem;  /* <-- Un tamaño de fuente base */
+}
+
+/*mis proyectos*/
+
+.mis-proyectos{
+    border: 1px solid #171717;
+    padding: 10px;
+    
+}
+
+.about .roll{
+    padding-bottom: 100px;   
+}

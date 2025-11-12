@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Momo+Trust+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Rubik+Gemstones&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar main">
+            <svg class="img-nav" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M39.9999 39.9999H17.6465V17.6465H39.9999V39.9999Z" fill="white" fill-opacity="0.9"/><path d="M32.9419 32.9418H0V0H32.9419V32.9418Z" fill="#DE5E91"/></svg>
+            <div class="ubicacion">
+                <p class="ubi">Viviendo en Curico, Chile</p>
+            </div>
+        </nav>
+
+        <section class="about main">
+            
+            <div class="me title">
+                <h1>Hola<br>Soy&nbsp;Luis<span>.</span></h1>
+            </div>
+            <div class="roll title">
+                <p>Desarrollador <span class="puesto">frontend</span></p>
+            </div>
+        </section>
+
+        <section class="mis-proyectos main">
+            <h2>Mis proyectos</h2>
+            <div class="Contai box">
+                <h3>Contai</h3>
+                <p>Pagina para servicios de auto matizacion contables.</p>
+                <div class="img-proyecto">
+                    
+                </div>
+            </div>
+
+            <div class="box portfolio">
+                <h3>Portfolio</h3>
+                <p>Pagina para mostrar mis proyectos.</p>
+                <div class="img-proyecto">
+                    <img src="./img/proyecto-portfolio-conta (1).png" alt="">
+                </div>
+            </div>
+        
+        </section>
+
+        <script>
+            window.addEventListener("scroll", () => {
+                const nav = document.querySelector(".navbar");
+                if (window.scrollY > 10) {
+                nav.classList.add("scrolled");
+                } else {
+                nav.classList.remove("scrolled");
+                }
+            });
+        </script>
+    </div>
+
+</body>
+</html>
