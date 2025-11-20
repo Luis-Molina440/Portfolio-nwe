@@ -1,51 +1,62 @@
+/* --- VARIABLES --- */
 :root {
-
     --negro: #000000;
-
-    --plomo-scroll: rgba(47, 46, 46, 0.4);
-
-    --white:rgb(255, 255, 255);
-
+    /* Un poco más opaco para leer mejor el texto sobre el fondo */
+    --plomo-scroll: rgba(47, 46, 46, 0.85); 
+    --white: rgb(255, 255, 255);
+    --accent: #DE5E91; /* Color rosa extraído de tu SVG */
 }
+
+/* --- RESET Y BASES (CRUCIAL PARA MÓVIL) --- */
 * {
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    /* Esto evita que la página se mueva a los lados (el efecto "zoom" indeseado) */
+    overflow-x: hidden; 
+}
+
 body {
     margin: 0;
-    background-color: #000000;
+    background-color: var(--negro);
     color: var(--white);
     font-family: "Montserrat", sans-serif;
 }
 
-
-.container {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 80px; 
+/* Regla de ORO para móviles: Las imágenes nunca deben superar el ancho de su contenedor */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
+/* --- LAYOUT --- */
+.container {
+    width: 100%;
+    /* Quitamos padding top excesivo aquí, lo manejamos en las secciones */
+}
 
 .main {
-    min-width: 300px;
     width: 100%;
-    }
+}
 
-
+/* --- NAVBAR --- */
 .navbar {
     position: fixed;
     top: 0;
-    left: 0; 
+    left: 0;
     width: 100%;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--negro); 
-    transition: background-color 0.3s; 
-    backdrop-filter: none;
+    background-color: var(--negro);
+    transition: background-color 0.3s;
     padding-left: 20px;
     padding-right: 20px;
+    z-index: 1000; /* Asegura que el menú esté siempre encima */
 }
 
 .navbar.scrolled {
@@ -54,60 +65,105 @@ body {
     -webkit-backdrop-filter: blur(8px);
 }
 
-.ubicacion{
+.ubicacion {
     font-weight: 550;
+    font-size: 0.9rem;
 }
 
-.img-nav{
+.img-nav {
+    width: 30px;      /* Tamaño controlado */
+    height: 30px;
     transform: rotate(-180deg);
-   transition: transform 0.3s;
+    transition: transform 0.3s;
 }
 
-.img-nav:hover{
-   transform: rotate(180deg);
-   transition: transform 0.3s;
+.img-nav:hover {
+    transform: rotate(180deg);
 }
 
+/* --- SECCIÓN HERO (ABOUT) --- */
 .about {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
-    justify-content: flex-end; 
-    padding-bottom: 5rem;    
-    width: 100%;
-    height: 100vh;
+    align-items: flex-start;
+    justify-content: center; /* Centrado verticalmente mejor que flex-end */
+    padding: 20px;
+    padding-top: 80px; /* Espacio para el navbar fijo */
+    min-height: 100vh; /* Ocupa al menos toda la pantalla */
+    
+    /* Fondo con capa oscura para legibilidad */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url("./img/fondo-portfolio.png") center 10%/cover no-repeat; 
+                url("./img/fondo-portfolio.png") center center/cover no-repeat;
     background-color: #000;
 }
 
 .me h1 {
     font-weight: 900;
-    font-size: clamp(3rem, 18vw, 8rem);
-    
-    line-height: 1.1; 
-    text-shadow: none;
+    /* CLAMP: Hace que el texto sea gigante en PC pero manejable en celular */
+    /* Mínimo 2.5rem, Ideal 12vw, Máximo 6rem */
+    font-size: clamp(2.5rem, 12vw, 6rem);
+    line-height: 1.1;
     margin: 0;
-    box-shadow: none; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
+
 .me span {
-    color: rgb(222, 94, 145);
+    color: var(--accent);
 }
 
 .roll {
     color: #777777;
-    margin-top: 2.5rem; 
-    font-size: 1rem;  /* <-- Un tamaño de fuente base */
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
 }
 
-/*mis proyectos*/
+.puesto {
+    color: var(--white);
+    font-weight: bold;
+}
 
-.mis-proyectos{
-    border: 1px solid #171717;
-    padding: 10px;
+/* --- SECCIÓN PROYECTOS --- */
+.mis-proyectos {
+    padding: 20px 20px 50px 20px;
+    /* Quitamos el border general y lo aplicamos a las cajas individuales */
+}
+
+.mis-proyectos h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+}
+
+.box {
+    border: 1px solid #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #0a0a0a; /* Un gris muy oscuro de fondo para diferenciar */
+}
+
+.box h3 {
+    margin-top: 0;
+    color: var(--accent);
+}
+
+.img-proyecto {
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden; 
+}
+
+/* --- MEDIA QUERIES (AJUSTES FINOS PARA CELULAR) --- */
+
+/* Si el celular es muy angosto (menos de 400px) */
+@media (max-width: 400px) {
+    .ubi {
+        display: none; /* Ocultamos la ubicación para que no choque con el logo */
+    }
     
-}
-
-.about .roll{
-    padding-bottom: 100px;   
+    .me h1 {
+        font-size: 2.5rem; /* Forzamos tamaño legible */
+    }
 }
