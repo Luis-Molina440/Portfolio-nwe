@@ -1,20 +1,17 @@
 /* --- VARIABLES --- */
 :root {
     --negro: #000000;
-    /* Un poco más opaco para leer mejor el texto sobre el fondo */
     --plomo-scroll: rgba(47, 46, 46, 0.85); 
     --white: rgb(255, 255, 255);
     --accent: #DE5E91; /* Color rosa extraído de tu SVG */
 }
 
-/* --- RESET Y BASES (CRUCIAL PARA MÓVIL) --- */
 * {
     box-sizing: border-box;
 }
 
 html, body {
     width: 100%;
-    /* Esto evita que la página se mueva a los lados (el efecto "zoom" indeseado) */
     overflow-x: hidden; 
 }
 
@@ -25,7 +22,6 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
-/* Regla de ORO para móviles: Las imágenes nunca deben superar el ancho de su contenedor */
 img {
     max-width: 100%;
     height: auto;
@@ -35,7 +31,6 @@ img {
 /* --- LAYOUT --- */
 .container {
     width: 100%;
-    /* Quitamos padding top excesivo aquí, lo manejamos en las secciones */
 }
 
 .main {
@@ -56,7 +51,7 @@ img {
     transition: background-color 0.3s;
     padding-left: 20px;
     padding-right: 20px;
-    z-index: 1000; /* Asegura que el menú esté siempre encima */
+    z-index: 1000; 
 }
 
 .navbar.scrolled {
@@ -71,7 +66,7 @@ img {
 }
 
 .img-nav {
-    width: 30px;      /* Tamaño controlado */
+    width: 30px;      
     height: 30px;
     transform: rotate(-180deg);
     transition: transform 0.3s;
@@ -86,10 +81,10 @@ img {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center; /* Centrado verticalmente mejor que flex-end */
+    justify-content: center; 
     padding: 20px;
-    padding-top: 80px; /* Espacio para el navbar fijo */
-    min-height: 100vh; /* Ocupa al menos toda la pantalla */
+    padding-top: 80px; 
+    min-height: 100vh; 
     
     /* Fondo con capa oscura para legibilidad */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -99,8 +94,6 @@ img {
 
 .me h1 {
     font-weight: 900;
-    /* CLAMP: Hace que el texto sea gigante en PC pero manejable en celular */
-    /* Mínimo 2.5rem, Ideal 12vw, Máximo 6rem */
     font-size: clamp(2.5rem, 12vw, 6rem);
     line-height: 1.1;
     margin: 0;
@@ -125,7 +118,7 @@ img {
 /* --- SECCIÓN PROYECTOS --- */
 .mis-proyectos {
     padding: 20px 20px 50px 20px;
-    /* Quitamos el border general y lo aplicamos a las cajas individuales */
+    
 }
 
 .mis-proyectos h2 {
@@ -140,7 +133,13 @@ img {
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
-    background-color: #0a0a0a; /* Un gris muy oscuro de fondo para diferenciar */
+    background-color: #0a0a0a; 
+    transition: transform 0.3s;
+}
+
+.box:hover{
+    transform: scale(1.01);
+    background-color: var(--plomo-scroll);
 }
 
 .box h3 {
