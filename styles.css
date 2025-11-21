@@ -100,7 +100,7 @@ img {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.me span {
+.punto {
     color: var(--accent);
 }
 
@@ -121,7 +121,7 @@ img {
     
 }
 
-.mis-proyectos h2 {
+h2 {
     font-size: 2rem;
     margin-bottom: 30px;
     border-bottom: 2px solid var(--accent);
@@ -138,7 +138,7 @@ img {
 }
 
 .box:hover{
-    transform: scale(1.01);
+    transform: scale(1.04);
     background-color: var(--plomo-scroll);
 }
 
@@ -154,15 +154,52 @@ img {
     overflow: hidden; 
 }
 
-/* --- MEDIA QUERIES (AJUSTES FINOS PARA CELULAR) --- */
 
-/* Si el celular es muy angosto (menos de 400px) */
+/*---SOBRE MI---*/
+
+.sobre-mi{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px 20px 50px 20px;
+    justify-content: center;
+}
+
+.descripcion{
+    line-height: 1.5;
+}
+
+.descripcion span{
+    color: var(--accent);
+    font-weight: 590;
+}
+
+
+.tecnologias{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+    background-color: var(--accent);
+    height: 50px;
+    border-radius: 16px;
+    padding: 5px;
+    
+}
+
+
+
+
+/* --- MEDIA QUERIES (AJUSTES PARA CELULAR) --- */
+
+/* menos de 400px */
 @media (max-width: 400px) {
     .ubi {
-        display: none; /* Ocultamos la ubicación para que no choque con el logo */
+        display: none; 
     }
     
     .me h1 {
-        font-size: 2.5rem; /* Forzamos tamaño legible */
+        font-size: 2.5rem; 
     }
 }
+
