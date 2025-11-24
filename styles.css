@@ -22,6 +22,10 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
+li{
+    list-style: none;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -31,6 +35,7 @@ img {
 /* --- LAYOUT --- */
 .container {
     width: 100%;
+    
 }
 
 .main {
@@ -104,7 +109,7 @@ img {
     color: var(--accent);
 }
 
-.roll {
+.griss {
     color: #777777;
     margin-top: 1.5rem;
     font-size: 1.1rem;
@@ -201,5 +206,29 @@ h2 {
     .me h1 {
         font-size: 2.5rem; 
     }
+}
+
+/* --- ContAI---*/
+
+.datos{
+    padding: 20px 20px 50px 20px;
+    padding-top: 80px;
+}
+
+.datos h1{
+    font-size: 2rem;
+    margin-bottom: 30px;
+    
+}
+
+.subtitulos{
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+}
+
+.griss{
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 

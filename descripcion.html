@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContAI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar main">
+            <svg class="img-nav" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M39.9999 39.9999H17.6465V17.6465H39.9999V39.9999Z" fill="white" fill-opacity="0.9"/><path d="M32.9419 32.9418H0V0H32.9419V32.9418Z" fill="#DE5E91"/></svg>
+            <div class="ubicacion">
+                <p class="ubi">Viviendo en Curico, Chile</p>
+            </div>
+        </nav>
+
+        
+        <section class="datos">
+            <h1>ContAI</h1>
+            <div class="rol">
+                <h2 class="subtitulos">Rol</h2>
+                <p class="texto griss">Desarrollador Frontend / Integrador Web</p>
+            </div>
+
+            <div class="responsabilidades">
+                <h2 class="subtitulos">Responsabilidades</h2>
+                <ul class="griss">
+                    <li>Corrección de problemas visuales y de ordenamiento en la interfaz.</li>
+                    <li>Adaptación del sitio para dispositivos móviles.</li>
+                    <li>Resolución de errores de ruptura de layout en diferentes tamaños.</li>
+                    <li>Configuración del hosting y publicación del sitio web.</li>
+                </ul>
+            </div>
+
+            <div class="descripcion">
+                <h2 class="subtitulos">Descripcion</h2>
+                <p class="griss">
+                   Este proyecto consiste en una página web diseñada para ofrecer servicios de automatización, incluyendo un formulario de contacto para clientes. El sitio fue desarrollado inicialmente con apoyo de herramientas de IA, y posteriormente optimizado manualmente para mejorar su diseño, funcionalidad y experiencia de usuario. 
+                </p>
+
+                <p class="griss">
+                    Mi participación se centró en ajustar y reorganizar la interfaz, corregir problemas de estilo y adaptar el diseño para que funcionara correctamente en dispositivos móviles. Además, realicé la integración final del código y desplegué el sitio en producción, asegurando que todas las secciones y el formulario estuvieran operativos.
+                </p>
+            </div>
+        </section>
+
+        <script>
+            window.addEventListener("scroll", () => {
+                const nav = document.querySelector(".navbar");
+                if (window.scrollY > 10) {
+                nav.classList.add("scrolled");
+                } else {
+                nav.classList.remove("scrolled");
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
