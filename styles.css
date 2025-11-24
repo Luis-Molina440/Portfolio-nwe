@@ -3,7 +3,7 @@
     --negro: #000000;
     --plomo-scroll: rgba(47, 46, 46, 0.85); 
     --white: rgb(255, 255, 255);
-    --accent: #DE5E91; /* Color rosa extraído de tu SVG */
+    --accent: #DE5E91; 
 }
 
 * {
@@ -98,7 +98,7 @@ img {
 }
 
 .me h1 {
-    font-weight: 900;
+    font-weight: 500;
     font-size: clamp(2.5rem, 12vw, 6rem);
     line-height: 1.1;
     margin: 0;
@@ -198,7 +198,7 @@ h2 {
 /* --- MEDIA QUERIES (AJUSTES PARA CELULAR) --- */
 
 /* menos de 400px */
-@media (max-width: 400px) {
+@media (max-width: 350px) {
     .ubi {
         display: none; 
     }
@@ -223,8 +223,10 @@ h2 {
 
 .subtitulos{
     font-size: 1.7rem;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
+    
 }
+
 
 .griss{
     padding: 0;
@@ -232,3 +234,11 @@ h2 {
     line-height: 1.5;
 }
 
+.griss li{
+    margin-bottom: 12px;
+}
+
+.griss span{
+    color: var(--white);
+    font-weight: 100;
+}
