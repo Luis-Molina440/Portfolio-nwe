@@ -81,17 +81,14 @@ img {
     transform: rotate(180deg);
 }
 
-/* --- SECCIÓN HERO (ABOUT) --- */
+
 .about {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; 
     justify-content: center; 
-    padding: 20px;
-    padding-top: 80px; 
+    padding: 20px 10%;
     min-height: 100vh; 
-    
-    /* Fondo con capa oscura para legibilidad */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                 url("./img/fondo-portfolio.png") center center/cover no-repeat;
     background-color: #000;
@@ -103,142 +100,42 @@ img {
     line-height: 1.1;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-align: left;
 }
 
-.punto {
-    color: var(--accent);
-}
 
 .griss {
     color: #777777;
-    margin-top: 1.5rem;
-    font-size: 1.1rem;
-}
-
-.puesto {
-    color: var(--white);
-    font-weight: bold;
-}
-
-/* --- SECCIÓN PROYECTOS --- */
-.mis-proyectos {
-    padding: 20px 20px 50px 20px;
-    
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    border-bottom: 2px solid var(--accent);
-    display: inline-block;
-}
-
-.box {
-    border: 1px solid #333;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    background-color: #0a0a0a; 
-    transition: transform 0.3s;
-}
-
-.box:hover{
-    transform: scale(1.04);
-    background-color: var(--plomo-scroll);
-}
-
-.box h3 {
-    margin-top: 0;
-    color: var(--accent);
-}
-
-.img-proyecto {
-    margin-top: 15px;
-    width: 100%;
-    border-radius: 4px;
-    overflow: hidden; 
-}
-
-
-/*---SOBRE MI---*/
-
-.sobre-mi{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    padding: 20px 20px 50px 20px;
-    justify-content: center;
-}
-
-.descripcion{
+    font-size: 1rem;
     line-height: 1.5;
+    margin: 0;
 }
 
-.descripcion span{
-    color: var(--accent);
-    font-weight: 590;
-}
-
-
-.tecnologias{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+.griss.title {
     margin-top: 20px;
-    background-color: var(--accent);
-    height: 50px;
-    border-radius: 16px;
-    padding: 5px;
-    
+    font-size: 1.1rem; 
 }
 
+.griss li {
+    margin-bottom: 12px;
+    list-style: none; 
+}
 
-
-
-/* --- MEDIA QUERIES (AJUSTES PARA CELULAR) --- */
 
 /* menos de 400px */
 @media (max-width: 350px) {
-    .ubi {
-        display: none; 
-    }
+    .ubi { display: none; }
+    .me h1 { font-size: 2.5rem; }
+}
+
+/* Laptops y PCs */
+@media (min-width: 1024px) {
     
+    .about {
+        align-items: flex-start; 
+        padding-left: 15%;
+    }
     .me h1 {
-        font-size: 2.5rem; 
+        font-weight: 600;
     }
-}
-
-/* --- ContAI---*/
-
-.datos{
-    padding: 20px 20px 50px 20px;
-    padding-top: 80px;
-}
-
-.datos h1{
-    font-size: 2rem;
-    margin-bottom: 30px;
-    
-}
-
-.subtitulos{
-    font-size: 1.7rem;
-    margin-bottom: 16px;
-    
-}
-
-
-.griss{
-    padding: 0;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.griss li{
-    margin-bottom: 12px;
-}
-
-.griss span{
-    color: var(--white);
-    font-weight: 500;
 }
