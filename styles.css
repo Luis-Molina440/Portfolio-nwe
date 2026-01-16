@@ -1,29 +1,21 @@
-/* --- VARIABLES --- */
+/* --- 1. VARIABLES Y RESET --- */
 :root {
     --negro: #000000;
     --plomo-scroll: rgba(47, 46, 46, 0.85); 
     --white: rgb(255, 255, 255);
     --accent: #DE5E91; 
+    --gris-texto: #777777;
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html, body {
     width: 100%;
     overflow-x: hidden; 
-}
-
-body {
     margin: 0;
     background-color: var(--negro);
     color: var(--white);
     font-family: "Montserrat", sans-serif;
-}
-
-li{
-    list-style: none;
 }
 
 img {
@@ -32,30 +24,14 @@ img {
     display: block;
 }
 
-/* --- LAYOUT --- */
-.container {
-    width: 100%;
-    
-}
-
-.main {
-    width: 100%;
-}
-
-/* --- NAVBAR --- */
+/* --- 2. NAVBAR --- */
 .navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    top: 0; left: 0; width: 100%; height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
     background-color: var(--negro);
     transition: background-color 0.3s;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
     z-index: 1000; 
 }
 
@@ -65,33 +41,16 @@ img {
     -webkit-backdrop-filter: blur(8px);
 }
 
-.ubicacion {
-    font-weight: 550;
-    font-size: 0.9rem;
-}
-
-.img-nav {
-    width: 30px;      
-    height: 30px;
-    transform: rotate(-180deg);
-    transition: transform 0.3s;
-}
-
-.img-nav:hover {
-    transform: rotate(180deg);
-}
-
-
+/* --- 3. SECCIÓN HERO (ABOUT) --- */
 .about {
     display: flex;
     flex-direction: column;
     align-items: flex-start; 
     justify-content: center; 
-    padding: 20px 10%;
+    padding: 20px 10%; /* Alineación base */
     min-height: 100vh; 
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                 url("./img/fondo-portfolio.png") center center/cover no-repeat;
-    background-color: #000;
 }
 
 .me h1 {
@@ -100,42 +59,98 @@ img {
     line-height: 1.1;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    text-align: left;
 }
 
-
-.griss {
-    color: #777777;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 0;
-}
+.punto { color: var(--accent); }
 
 .griss.title {
     margin-top: 20px;
-    font-size: 1.1rem; 
+    color: var(--gris-texto);
+    font-size: 1.1rem;
 }
 
-.griss li {
-    margin-bottom: 12px;
-    list-style: none; 
+.puesto { color: var(--white); font-weight: bold; }
+
+/* --- 4. SECCIÓN PROYECTOS --- */
+.mis-proyectos {
+    padding: 80px 10%;
 }
 
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+}
 
-/* menos de 400px */
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.box {
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #0a0a0a; 
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: scale(1.04);
+    background-color: #111;
+}
+
+.box h3 { margin-top: 0; color: var(--accent); }
+
+/* --- 5. SOBRE MÍ --- */
+.sobre-mi {
+    padding: 80px 10%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.descripcion { line-height: 1.6; font-size: 1.1rem; }
+.descripcion span { color: var(--accent); font-weight: 600; }
+
+.tecnologias {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    background-color: var(--accent);
+    padding: 15px;
+    border-radius: 16px;
+}
+
+/* --- 6. DATOS Y CONTACTO --- */
+.datos {
+    padding: 80px 10%;
+}
+
+.subtitulos { font-size: 1.7rem; margin-bottom: 16px; }
+
+.lista-datos {
+    padding: 0;
+    list-style: none;
+    color: var(--gris-texto);
+}
+
+.lista-datos li { margin-bottom: 12px; }
+.lista-datos span { color: var(--white); font-weight: 500; }
+
+/* --- 7. RESPONSIVE --- */
+
 @media (max-width: 350px) {
     .ubi { display: none; }
-    .me h1 { font-size: 2.5rem; }
+    .me h1 { font-size: 2.2rem; }
 }
 
-/* Laptops y PCs */
 @media (min-width: 1024px) {
-    
-    .about {
-        align-items: flex-start; 
-        padding-left: 15%;
-    }
-    .me h1 {
-        font-weight: 600;
-    }
+    .about { padding-left: 15%; }
+    .mis-proyectos, .sobre-mi, .datos { padding-left: 15%; }
+    .me h1 { font-weight: 600; }
 }
